@@ -1,16 +1,14 @@
-import { Content } from "./content";
-import { Notification } from "./notification";
+import { Content } from './content';
+import { Notification } from './notification';
 
-test('It shoild be able to create a new notification', () => {
-
+describe('Notification', () => {
+  it('should be able to create a notification', () => {
     const notification = new Notification({
-        recipientId: "123",
-        content: new Content("Some content"),
-        category: "some category",
-        createdAt: new Date()
+      content: new Content('Nova solicitação de amizade'),
+      category: 'social',
+      recipientId: 'example-recipient-id',
     });
 
-   expect(notification).toBeTruthy();
-
+    expect(notification).toBeTruthy();
+  });
 });
-
