@@ -1,12 +1,10 @@
+import { MessagingModule } from '@infra/messaging/messaging.module';
 import { Module } from '@nestjs/common';
-import { NotificationsController } from './infra/http/controllers/notifications.controller';
-import { AppService } from './app.service';
-import { PrismaService } from './infra/database/prisma/prisma.service';
-import { HttpModule } from './infra/http/http.module';
 import { DatabaseModule } from './infra/database/database.module';
+import { HttpModule } from './infra/http/http.module';
 
 @Module({
-  imports: [HttpModule, DatabaseModule],
-
+  //! imports is an array of modules that will be imported into the current module. doc: https://docs.nestjs.com/modules#modules
+  imports: [HttpModule, DatabaseModule, MessagingModule],
 })
 export class AppModule {}

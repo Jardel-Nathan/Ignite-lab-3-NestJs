@@ -45,6 +45,20 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Producer a Kafka message
+
+```
+fetch('[ENDPOINT]/produce/notifications.send-notification/{ "content": "Nova solicitação de amizade!", "category": "social", "recipientId": "recipient-id" }', {
+  headers: {
+    Authorization: "Basic [TOKEN]"
+  }
+}).then(response => response.json())
+  .then(data => {
+    console.log(data)
+  });
+  ```
+
+
 ## Test
 
 ```bash
